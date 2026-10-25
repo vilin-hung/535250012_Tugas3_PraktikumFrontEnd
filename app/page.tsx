@@ -1,69 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
+import Link from "next/link";
+import HeroSection from "./components/HeroSection";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <HeroSection />
+
+      <section className="home-intro section-container">
+        <p className="eyebrow">FEEL THE MUSIC, FEEL THE FUN</p>
+        <h2>Every note tells a story</h2>
+
+        <p className="section-description">
+          At Vilmuse Studio, we believe learning music should be
+          a joyful journey. We create a welcoming space where
+          students can learn, grow, and express themselves through music
+        </p>
+
+        <Link href="/about" className="text-link">
+          More about our studio →
+        </Link>
+      </section>
+
+      <section className="home-programs">
+        <div className="section-container">
+          <p className="eyebrow">FIND YOUR MELODY</p>
+          <h2>There is a place for every musician</h2>
+
+          <p className="section-description">
+            From your very first lesson to exploring new musical
+            goals, every step is worth celebrating
           </p>
+
+          <div className="home-program-grid">
+            <article className="mini-program">
+              <h3>Piano Lessons</h3>
+              <p>
+                Develop your technique, musicality, and confidence
+                one note at a time
+              </p>
+            </article>
+
+            <article className="mini-program">
+              <h3>Music Theory</h3>
+              <p>
+                Understand notes, rhythms, and the ideas behind
+                the music you love
+              </p>
+            </article>
+
+            <article className="mini-program">
+              <h3>Exam Preparation</h3>
+              <p>
+                Work towards your musical goals with structured
+                practice and supportive guidance
+              </p>
+            </article>
+
+            <article className="mini-program">
+              <h3>Concerts & Recitals</h3>
+              <p>
+                Share your progress, build confidence, and enjoy
+                the experience of performing
+              </p>
+            </article>
+          </div>
+
+          <Link href="/programs" className="button-primary">
+            Discover our programs →
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="home-quote section-container">
+        <p className="eyebrow">YOUR MUSICAL JOURNEY STARTS HERE</p>
+        <h2>It&lsquo;s never too late to begin</h2>
+        <p>
+          Whether you&lsquo;re discovering music for the first time
+          or returning to a long-loved passion, there&lsquo;s always
+          room to learn, grow, and enjoy the journey
+        </p>
+      </section>
+    </main>
   );
 }
